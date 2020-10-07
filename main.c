@@ -25,10 +25,8 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2){
     
     if (l1 || l2)
     {
-        int add_result = add_node(l1, l2);
-        
+        int add_result = add_node(l1, l2);        
         sentinelle->val = (add_result + carry) % 10;
-
 	carry = (add_result + carry) > 9; 
 
 	if (l1)
@@ -74,13 +72,12 @@ void print_ListNode(struct ListNode *l)
 
 int main(void)
 {
-
     int arr1[] = {4, 3, 5, 9};
     int arr2[] = {4, 6, 5};
 
     struct ListNode *l1 = list_init(arr1, 3);
     struct ListNode *l2 = list_init(arr2, 4);
-    struct ListNode *result = addTwoNumbers(l1, NULL);
+    struct ListNode *result = addTwoNumbers(l1, l2);
   
     print_ListNode(l1);
     print_ListNode(l2);
