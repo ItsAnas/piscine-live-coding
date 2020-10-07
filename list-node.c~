@@ -1,0 +1,6 @@
+#include "list-node.h"
+
+void list_init(int arr[], int size)
+{
+
+}
