@@ -10,4 +10,4 @@ $(BIN): $(OBJS)
 
 
 clean:
-	rm *.o *~
+	$(RM) *.o *~ $(BIN)
