@@ -35,7 +35,7 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2){
 	    l2 = l2->next;        
     }
           
-    while (l1 || l2)
+    while (l1 || l2 || carry)
     {
         sentinelle->next = malloc(sizeof(struct ListNode));
         sentinelle = sentinelle->next;
@@ -72,11 +72,11 @@ void print_ListNode(struct ListNode *l)
 
 int main(void)
 {
-    int arr1[] = {4, 3, 5, 9};
-    int arr2[] = {4, 6, 5};
+    int arr1[] = {8, 8, 0};
+    int arr2[] = {1, 2, 0};
 
     struct ListNode *l1 = list_init(arr1, 3);
-    struct ListNode *l2 = list_init(arr2, 4);
+    struct ListNode *l2 = list_init(arr2, 3);
     struct ListNode *result = addTwoNumbers(l1, l2);
   
     print_ListNode(l1);
