@@ -21,6 +21,7 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2){
     struct ListNode *result = malloc(sizeof(struct ListNode));
     struct ListNode *sentinelle = result;
 
+    result->val = 0; // In case both are null
     int carry = 0;
     
     if (l1 || l2)
@@ -77,7 +78,7 @@ int main(void)
 
     struct ListNode *l1 = list_init(arr1, 3);
     struct ListNode *l2 = list_init(arr2, 3);
-    struct ListNode *result = addTwoNumbers(l1, l2);
+    struct ListNode *result = addTwoNumbers(NULL, l1);
   
     print_ListNode(l1);
     print_ListNode(l2);
