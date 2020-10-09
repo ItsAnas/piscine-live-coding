@@ -56,6 +56,8 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2){
 	    l2 = l2->next;        
     }
     
+    sentinelle->next = NULL;
+    
     return result;
 }
 
