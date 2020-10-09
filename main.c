@@ -19,6 +19,8 @@ int add_node(struct ListNode* l1, struct ListNode* l2)
 
 struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2){
     struct ListNode *result = malloc(sizeof(struct ListNode));
+    if (!result)
+	return NULL;
     struct ListNode *sentinelle = result;
 
     result->val = 0; // In case both are null
@@ -39,6 +41,8 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2){
     while (l1 || l2 || carry)
     {
         sentinelle->next = malloc(sizeof(struct ListNode));
+	if (!sentinelle->next)
+	    return NULL; // Should call something like list_destroy(), but you have it in your exercices, so I can't give it to you
         sentinelle = sentinelle->next;
         
         int add_result = add_node(l1, l2);
@@ -73,12 +77,12 @@ void print_ListNode(struct ListNode *l)
 
 int main(void)
 {
-    int arr1[] = {8, 8, 0};
-    int arr2[] = {1, 2, 0};
+    int arr1[] = {4,5,2,2,9,3,8,9,2};
+    int arr2[] = {0,7,6,1,6,5,0,6,7};
 
-    struct ListNode *l1 = list_init(arr1, 3);
-    struct ListNode *l2 = list_init(arr2, 3);
-    struct ListNode *result = addTwoNumbers(NULL, l1);
+    struct ListNode *l1 = list_init(arr1, 9);
+    struct ListNode *l2 = list_init(arr2, 9);
+    struct ListNode *result = addTwoNumbers(l1, l2);
   
     print_ListNode(l1);
     print_ListNode(l2);
